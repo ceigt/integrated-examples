@@ -11,9 +11,9 @@
 
 1、Xray 版本不小于 v1.8.9 才支持 HttpUpgrade 传输方式。
 
-2、Nginx 支持 HTTPS server 需要 Nginx 包含 http_ssl_module 模块等。
+2、Nginx 支持不同站点共用监听端口需要 Nginx 包含 stream_core_module 和 stream_ssl_preread_module 模块。
 
-3、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
+3、Nginx 支持 HTTPS server 需要 Nginx 包含 http_ssl_module 模块等。
 
 4、若选用 Nginx 实现应用，不要使用 ACME 客户端在采用本示例的服务器上以 HTTP-01 或 TLS-ALPN-01 验证方式申请与更新 TLS 证书，因 HTTP-01 或 TLS-ALPN-01 验证方式申请与更新 TLS 证书需监听 80 或 443 端口，从而与当前应用端口冲突。
 
